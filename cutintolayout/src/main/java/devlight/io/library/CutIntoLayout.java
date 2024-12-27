@@ -18,7 +18,7 @@ package devlight.io.library;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.TypedArray;
+//import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -76,11 +76,11 @@ public class CutIntoLayout extends FrameLayout {
         setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         ViewCompat.setLayerType(this, ViewCompat.LAYER_TYPE_SOFTWARE, null);
 
-        final TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CutIntoLayout);
+      //  final TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CutIntoLayout);
         try {
-            setMask(typedArray.getDrawable(R.styleable.CutIntoLayout_cil_mask));
+            setMask(CutIntoLayout_cil_mask);
         } finally {
-            typedArray.recycle();
+          //  typedArray.recycle();
         }
     }
 
@@ -131,7 +131,7 @@ public class CutIntoLayout extends FrameLayout {
         super.onLayout(changed, left, top, right, bottom);
 
         if (getChildCount() > 1)
-            throw new IllegalArgumentException(getResources().getString(R.string.child_exception));
+            throw new IllegalArgumentException(getResources().getString();
 
         final View child = getChildAt(0);
 
